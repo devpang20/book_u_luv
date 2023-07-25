@@ -39,12 +39,12 @@ public class EmailService {
     }
 
     private RsData trySend(String email, String title, String body) {
-        if (AppConfig.isNotProd() && email.equals("jangka2048@gmail.com") == false) {
+        if (AppConfig.isNotProd() && email.equals("insung5189@email@gmail.com") == false) {
             return RsData.of("S-0", "메일이 발송되었습니다.");
         }
 
         try {
-            emailSenderService.send(email, "no-reply@no-reply.com", title, body);
+            emailSenderService.send(email, "insung5189@email@gmail.com", title, body);
 
             return RsData.of("S-1", "메일이 발송되었습니다.");
         } catch (MailException e) {

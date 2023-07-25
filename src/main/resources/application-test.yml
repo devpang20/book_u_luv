@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mariadb://${testDbIp:127.0.0.1}:3307/book_u_luv?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
-    username: ${testDbId:root}
-    password: ${testDbPw:}
+    url: jdbc:mariadb://bookuluv.cmdeab77miub.ap-northeast-2.rds.amazonaws.com:3306/book_u_luv?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
+    username: buladmin
+    password: 1q2w3e4r
   jpa:
     hibernate:
       ddl-auto: create

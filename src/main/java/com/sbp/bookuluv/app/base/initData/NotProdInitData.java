@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile({"dev", "test"})
 public class NotProdInitData {
-    private boolean initDataDone = false;
+    private boolean initDataDone = true; // 어플리케이션 실행시 , false값이면 초기데이터를 삽입함, true값이면 초기데이터를 넣지 않음
 
     @Bean
     CommandLineRunner initData(
