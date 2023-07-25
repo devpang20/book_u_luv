@@ -18,13 +18,15 @@ public class EmailVerificationService {
     private final AttrService attrService;
 
     public RsData<Long> send(Member member) {
-        String email = member.getEmail();
+        String email = member.getEmail(); // member에서 Email 정보를 가져옴
         String title = "[%s 이메일인증] 안녕하세요 %s님. 링크를 클릭하여 회원가입을 완료해주세요.".formatted(AppConfig.getSiteName(), member.getName());
+        // 인증용 이메일 발송내용(첫 번째 %s에는 사이트명(book_u_luv)을 기재하고, 두 번째 %s에는 닉네임이 존재할 경우 닉네임을 표시하지만 그렇지 않을경우 유저ID를 표시함.)
         String url = genEmailVerificationUrl(member);
 
         RsData<Long> sendEmailRs = emailService.sendEmail(email, title, url);
+        // Email 발송내용(email, title, url)을 sendEmailRs 변수에 담음.
 
-        return sendEmailRs;
+        return sendEmailRs; // Email 발송내용이 담긴 sendEmailRs을 메서드에서 리턴
     }
 
     public String genEmailVerificationUrl(Member member) {
