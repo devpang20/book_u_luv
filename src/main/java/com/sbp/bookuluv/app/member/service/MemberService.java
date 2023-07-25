@@ -32,19 +32,19 @@ public class MemberService {
     @Transactional
     public Member join(String username, String password, String email, String nickname) {
         if (memberRepository.findByUsername(username).isPresent()) {
-            throw new AlreadyJoinException();
+            throw new AlreadyJoinException(); // 이미 존재하는 계정정보일 경우 AlreadyJoinException 발생
         }
 
         Member member = Member.builder()
-                .username(username)
-                .password(passwordEncoder.encode(password))
-                .email(email)
-                .nickname(nickname)
-                .build();
+                .username(username) // 유저 ID
+                .password(passwordEncoder.encode(password)) // PW 난수 인코딩
+                .email(email) // 유저 Email
+                .nickname(nickname) // 유저 nickname == default = null
+                .build(); // member 변수에 build 함.
 
-        memberRepository.save(member);
+        memberRepository.save(member); // build된 member변수가 .save로 JPArepository로 전송
 
-        emailVerificationService.send(member);
+        emailVerificationService.send(member); // 입력받은 Email로 인증용 키 발송
 
         return member;
     }

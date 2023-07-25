@@ -32,10 +32,9 @@ public class Member extends BaseEntity {
     private String nickname;
 
     public String getName() {
-        if (nickname != null) {
+        if (nickname != null) { // 닉네임이 존재할 경우만 닉네임으로 표시하고 아닐경우 유저ID로 표시
             return nickname;
         }
-
         return username;
     }
 
