@@ -8,7 +8,7 @@ spring:
   jpa:
     properties:
       hibernate:
-        show_sql: false
+        show_sql: true
         format_sql: false
         use_sql_comments: false
     hibernate:
@@ -20,4 +20,4 @@ logging:
     org.hibernate.type.descriptor.sql: info
 custom:
   site:
-    baseUrl: "https://service-domain"
+    baseUrl: "http://www.bookuluv.devh.me"
