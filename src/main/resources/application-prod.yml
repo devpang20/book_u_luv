@@ -12,7 +12,7 @@ spring:
         format_sql: false
         use_sql_comments: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
 logging:
   level:
     root: info
