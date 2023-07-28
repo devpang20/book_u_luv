@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: prod
     include:
       - base-addi
   datasource:
@@ -31,4 +31,4 @@ logging:
 custom:
   site:
     name: book_u_luv
-    baseUrl: "http://localhost:8010"
+    baseUrl: "https://www.bookuluv.devh.me/"
