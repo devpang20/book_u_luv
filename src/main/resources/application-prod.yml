@@ -23,4 +23,4 @@ logging:
     org.hibernate.type.descriptor.sql: info
 custom:
   site:
-    baseUrl: "http://www.bookuluv.devh.me"
+    baseUrl: "https://www.bookuluv.devh.me"
